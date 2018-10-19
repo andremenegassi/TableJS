@@ -1,4 +1,7 @@
-﻿var tablejs = {
+﻿/*TableJS 1.0 - HTML table generator by pure Javascript code.*/
+/*By André Menegassi (andremenegassi@hotmail.com) */
+
+var tablejs = {
 
     generate: function (container, dataArrayObject, htmlRowTemplate, options)
     {
