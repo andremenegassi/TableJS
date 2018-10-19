@@ -87,3 +87,5 @@ TableJS facilitates dynamic creation of HTML tables from Javascript code.
     </script>
 
 
+<h1>Demo</h1>
+<a href="https://github.com/andremenegassi/TableJS/blob/master/demo.html">See a demo</a>
