@@ -3,6 +3,8 @@
 
 TableJS facilitates dynamic creation of HTML tables from Javascript code. 
 
+Implements event handlers for each row created (rowDataBound). 
+
 
 <h1>How to use</h1>
 
