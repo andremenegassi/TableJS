@@ -1,8 +1,12 @@
-# TableJS (Pure JS) - Gerador de tabela dinâmica a partir de código Javascript.
+# TableJS - HTML table generator by pure Javascript code.
 
-Gerador de tabela HTML por código Javascript. 
 
-<h1>Demo</h1>
+TableJS facilitates dynamic creation of HTML tables from Javascript code. 
+
+
+<h1>How to use</h1>
+
+<script src="tablejs.js"></script>
 
 <img src="https://github.com/andremenegassi/TableJS/blob/master/demo.png">
 
