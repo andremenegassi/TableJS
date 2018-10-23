@@ -1,10 +1,12 @@
-﻿/*TableJS 1.0 - HTML table generator by pure Javascript code.*/
+﻿/*TableJS 1.1 - HTML table generator by pure Javascript code.*/
 /*By André Menegassi (andremenegassi@hotmail.com) */
 
 var tablejs = {
 
     generate: function (container, dataArrayObject, htmlRowTemplate, options)
     {
+
+        var datai = window.performance.now();
 
         container.innerHTML = "";
 
@@ -33,6 +35,7 @@ var tablejs = {
             if (options.emptyText != null) {
                 emptyText = options.emptyText;
             }
+
         }
 
         var table = document.createElement("table");
@@ -55,21 +58,20 @@ var tablejs = {
         }
 
         var tbody = document.createElement("tbody");
-        table.appendChild(tbody);
+        var tbodyFrag = document.createDocumentFragment();
 
         for (var i = 0; i < dataArrayObject.length; i++) {
 
             var aux = htmlRowTemplate;
-            
+
             for (var p in dataArrayObject[i]) {
                 aux = aux.replace(new RegExp('{' + p + '}', 'g'), dataArrayObject[i][p]);
             }
 
-
             var tbodyFake = document.createElement("tbody");
             tbodyFake.innerHTML = aux;
             var newRow = tbodyFake.querySelector("tr");
-            tbody.appendChild(newRow);
+            tbodyFrag.appendChild(newRow);
 
             if (rowDataBound != null)
                 rowDataBound(newRow, dataArrayObject[i]);
@@ -80,13 +82,18 @@ var tablejs = {
         }
         else {
 
-            container.appendChild(table);
+            tbody.appendChild(tbodyFrag);
             table.appendChild(tbody);
+            container.appendChild(table);
 
             if (tableClassName != null) {
                 table.className = tableClassName;
             }
         }
+
+        var dataf = window.performance.now();
+
+        console.log(dataf - datai);
 
     },
 
