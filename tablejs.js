@@ -6,8 +6,6 @@ var tablejs = {
     generate: function (container, dataArrayObject, htmlRowTemplate, options)
     {
 
-        var datai = window.performance.now();
-
         container.innerHTML = "";
 
         var showHeaders = true;
@@ -90,10 +88,6 @@ var tablejs = {
                 table.className = tableClassName;
             }
         }
-
-        var dataf = window.performance.now();
-
-        console.log(dataf - datai);
 
     },
 
