@@ -13,17 +13,16 @@ jobs:
       - name: INICIANDO A PUBLICAÇÃO
         run: echo INICIANDO...
 
-    - name: npm install, build, and test
-    run: |
-        npm install
-        npm run build --if-present
-        npm run test --if-present
+      - name: npm install, build, and test
+        run: |
+            npm install
+            npm run build --if-present
+            npm run test --if-present
 
   producao-deploy:
     if: github.ref == 'refs/heads/main'
     needs: [deploy-init]
     runs-on: ubuntu-latest
-    needs: build
     
     steps:
       - uses: actions/checkout@v3
