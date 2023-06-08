@@ -1,15 +1,8 @@
 name: main.deploy
 
-on: [workflow_dispatch]
+on:
   push:
-    branches: [ "master"]
-env:
-    #Servidor de CI-CD
-    CHAVE_SSH: /home/ubuntu/actions-runner/key-ssh/github-actions
-    CAMINHO_PROJETO: ${{ github.workspace }}/src/TDW/TDW.Presentation.Painel
-    CAMINHO_PROJETO_PASTA_COMPILACAO: /home/ubuntu/actions-runner/temp-publish-files/super-painel-digital-backoffice
-    
-    IP_SERVIDOR_IMPLANTACAO: 10.0.0.109
+    branches: [ "master" ]
 
 jobs:
   deploy-init:
@@ -17,12 +10,11 @@ jobs:
       
     steps:
       - uses: actions/checkout@v3
-          
       - name: INICIANDO A PUBLICAÇÃO
         run: echo INICIANDO...
 
-      - name: npm install, build, and test
-       run: |
+    - name: npm install, build, and test
+    run: |
         npm install
         npm run build --if-present
         npm run test --if-present
